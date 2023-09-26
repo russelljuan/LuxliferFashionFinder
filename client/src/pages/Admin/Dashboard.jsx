@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { apiURL } from "../../api/index";
+import { apiURL,categoriesData } from "../../api/index";
 
 const Dashboard = () => {
   const [formData, setFormData] = useState({
@@ -96,15 +96,21 @@ const Dashboard = () => {
           <label className="block text-gray-700 font-bold mb-2" htmlFor="category">
             Category
           </label>
-          <input
-            type="text"
+          <select
             id="category"
             name="category"
             value={formData.category}
             onChange={handleInputChange}
             className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:shadow-outline"
             required
-          />
+          >
+            <option value="">Select a category</option>
+            {categoriesData.map((category) => (
+              <option key={category.id} value={category.title}>
+                {category.title}
+              </option>
+            ))}
+          </select>
         </div>
         <div className="mb-4">
           <label className="block text-gray-700 font-bold mb-2" htmlFor="file">

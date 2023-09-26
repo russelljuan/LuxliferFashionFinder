@@ -16,7 +16,7 @@ function Category(props) {
   const numItemsInCategory = itemsInCategory.length;
   return (
     <NavLink to={`/shop/${props.category.title}`}>
-      <button className={`mr-8 w-[200px] h-[80px] ml-2 ${props.category.title==="All Categories"?"bg-blue-50":"bg-blue-10"} rounded-lg outline-none border border-primary pl-8 pr-8 flex justify-center items-center pt-3 pb-3`}>
+      <button className={`mr-8 w-[200px] h-[80px] ml-2 ${props.category.id===3?"w-[240px]":""} ${props.category.id===2?"w-[300px]":""} ${props.category.title==="All Categories"?"bg-blue-50":"bg-blue-10"} rounded-lg outline-none border border-primary pl-8 pr-8 flex justify-center items-center pt-3 pb-3`}>
         <img
           className="pr-3 pl-3"
           src={props.category.img}
